@@ -1,9 +1,10 @@
 import Test from './Test';
 function App() {
+  const data = 'React Coding'
   return (
     <h1>
       <Test />
-      Hello React with vite | SK SHUBHAM
+      Hello React with vite | SK SHUBHAM {data}
     </h1>
   )
 }
