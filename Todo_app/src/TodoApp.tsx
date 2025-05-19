@@ -23,7 +23,7 @@ const TodoApp = () => {
       }}
     >
       <AppBar position="static" style={{ height: "3em" }}>
-        TOTO List
+        TODO List
       </AppBar>
       <Grid
         container

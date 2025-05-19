@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { parse } from '@babel/parser';
+import React from "react";
+import { DraggleSplitter } from "./DraggableSpliter/DraggableSplitter";
+import { header_menue } from "./Constants/HeaderConstants";
+import Header from "./Components/HeaderComponent/Header";
+import CodeEditor from "./Components/CodeEditor/CodeEditor";
+import JSONViewer from "./Components/JSONViewer/JSONViewer";
+import ATSDataContext from "./Context/ATSDataContext";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
+    <React.Fragment>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <ATSDataContext>
+          <header className="flex bg-gray-800 text-white p-4">
+            <Header headerData={header_menue} />
+          </header>
+          <DraggleSplitter>
+            <CodeEditor />
+            <JSONViewer />
+          </DraggleSplitter>
+        </ATSDataContext>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </React.Fragment>
+  );
+};
 
-export default App
+export default App;
